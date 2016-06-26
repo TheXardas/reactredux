@@ -1,8 +1,9 @@
 var webpack = require("webpack");
-var path = require("path");
 
 module.exports = {
+    devtool: "source-map",
     entry: [
+        "babel-polyfill",
         "webpack-dev-server/client?http://localhost:8080",
         "webpack/hot/dev-server",
         "./src/app.js"
@@ -13,13 +14,15 @@ module.exports = {
         publicPath: "/assets"
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
     ],
     module: {
         loaders: [{
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: "babel-loader"
+            loaders: ["babel"],
+            include: __dirname + "/src"
         }]
     }
 }
