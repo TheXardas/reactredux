@@ -1,7 +1,6 @@
 jest.unmock("../src/chooseYourDestinyApp/components/DestinySelector/DestinySelector");
 jest.unmock("../src/common/components");
 jest.unmock("../src/common/components/Select/Select");
-jest.unmock("classnames");
 
 import * as React from "react";
 import * as ReactDOM from "react-dom";
@@ -41,5 +40,6 @@ describe("Tests DestinySelector component", () => {
         expect(TestUtils.scryRenderedDOMComponentsWithClass(component, "weaponSelect").length).toBe(0);
 
         chooseValue(component, "scorpion");
+        expect(onChangeCalled).toBe(true);
     });
 });
