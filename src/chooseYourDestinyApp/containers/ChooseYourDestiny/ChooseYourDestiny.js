@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import * as Actions from "../../actions/index";
 import DestinySelector from "./../../components/DestinySelector/DestinySelector"
+import "./ChooseYourDestiny.css"
 
 class ChooseYourDestiny extends React.Component {
 
@@ -11,12 +12,15 @@ class ChooseYourDestiny extends React.Component {
 
     render() {
         return (
-            <DestinySelector
-                onChange={this.onChange}
-                character={this.props.destiny.character}
-                fightingStyle={this.props.destiny.fightingStyle}
-                weapon={this.props.destiny.weapon}
-            />
+            <div className="chooseYourDestiny">
+                <div className="logoWrapper"><div className="logo"/></div>
+                <DestinySelector
+                    onChange={this.onChange}
+                    character={this.props.destiny.character}
+                    fightingStyle={this.props.destiny.fightingStyle}
+                    weapon={this.props.destiny.weapon}
+                />
+            </div>
         )
     }
 }

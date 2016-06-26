@@ -1,5 +1,6 @@
 import * as React from "react";
 import ExternalSelect from "react-select";
+import "react-select/dist/react-select.css";
 
 export default class Select extends React.Component {
 
@@ -16,11 +17,11 @@ export default class Select extends React.Component {
     }
     
     render() {
+        const props = Object.assign({}, this.props, {options: this.getOptions()});
+
         return (
             <ExternalSelect
-                options={this.getOptions()}
-                onChange={this.props.onChange}
-                value={this.props.value}
+                {...props}
             />
         )
     }

@@ -1,0 +1,16 @@
+.chooseYourDestinyWrapper {
+
+}
+
+.logoWrapper {
+    width: 100%;
+    height: 200px;
+    background: black;
+}
+
+.logo {
+    background: url("logo.png") center no-repeat;
+    width: 1000px;
+    margin: auto;
+    height: 100%;
+}
