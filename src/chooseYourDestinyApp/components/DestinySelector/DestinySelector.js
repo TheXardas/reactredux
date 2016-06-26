@@ -1,5 +1,4 @@
 import React from "react";
-import {connect} from "react-redux";
 import {Select} from "./../../../common/components"
 import "./DestinySelector.css"
 
@@ -106,7 +105,7 @@ export default class DestinySelector extends React.Component {
         return (
             <Select
                 placeholder="Воин"
-                className="destinySelectorSelect"
+                className="destinySelectorSelect characterSelect"
                 id="character"
                 onChange={this.getOnChange("character")}
                 options={this.getCharacterOptions()}
@@ -123,7 +122,7 @@ export default class DestinySelector extends React.Component {
         return (
             <Select
                 placeholder="Стиль боя"
-                className="destinySelectorSelect"
+                className="destinySelectorSelect fightingStyleSelect"
                 id="fightingstyle"
                 onChange={this.getOnChange("fightingStyle")}
                 options={options}
@@ -140,7 +139,7 @@ export default class DestinySelector extends React.Component {
         return (
             <Select
                 placeholder="Оружие"
-                className="destinySelectorSelect"
+                className="destinySelectorSelect weaponSelect"
                 id="weapon"
                 onChange={this.getOnChange("weapon")}
                 options={options}

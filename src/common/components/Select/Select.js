@@ -11,7 +11,7 @@ export default class Select extends React.Component {
 
         if (typeof this.props.options === "object") {
             return Object.getOwnPropertyNames(this.props.options).map((key, value) => {
-                return {value: key, label: this.props.options[key]}
+                return {value: key, label: this.props.options[key], className: key}
             });
         }
     }
